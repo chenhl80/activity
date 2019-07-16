@@ -1,45 +1,75 @@
 <template>
-    <div class="pp-prop-btn  xl-prop-comm-style">
-            <div class="toolbar">
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">位置</p> 
-                    <span class="toolbar-position-inp"><em>top</em><input v-model="prop_top"></span> 
-                    <span class="toolbar-position-inp"><em>left</em><input v-model="prop_left"></span>
-                </div> 
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">尺寸</p> 
-                    <span class="toolbar-size-inp"><em>width</em><input v-model="prop_width"></span> 
-                    <span class="toolbar-size-inp"><em>height</em><input v-model="prop_height"></span>
+    <div class="xl-props">
+        <div class="property-fields">
+            <div class="xl-prop-item xl-prop-item-line">
+                <div class="xl-prop-item-l"><label>统计</label></div>
+                <div class="xl-prop-item-r"><input type="text" class="input-com-input"></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>W</label></div>
+                <div class="xl-prop-item-c input-number-input-temp"><input type="number" class="input-com-input" @focus="focus" @blur="blur"></div>
+                <div class="xl-prop-item-l"><label>H</label></div>
+                <div class="xl-prop-item-c input-number-input-temp"><input type="number" class="input-com-input" @focus="focus" @blur="blur"></div> 
+            </div>
+            <div class="xl-prop-item  xl-prop-item-line">
+                <div class="xl-prop-item-l"><label>TOP</label></div>
+                <div class="xl-prop-item-c input-number-input-temp"><input type="number" class="input-com-input" @focus="focus" @blur="blur"></div>
+                <div class="xl-prop-item-l"><label>LEFT</label></div>
+                <div class="xl-prop-item-c input-number-input-temp"><input type="number" class="input-com-input" @focus="focus" @blur="blur"></div>
+            </div>
+            <div class="xl-prop-item ">
+                <div class="xl-prop-item-l"><label>字体颜色</label></div>
+                <div class="xl-prop-item-r"><input type="text" class="input-number-input"></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>按钮标题</label></div>
+                <div class="xl-prop-item-r"><input type="text"></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>背景色</label></div>
+                <div class="xl-prop-item-r"><input type="text"></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>边框圆角</label></div>
+                <div class="xl-prop-item-r"><input type="text"></div>
+            </div>
+            <div class="xl-prop-item xl-prop-item-line">
+                <div class="xl-prop-item-l"><label>动画效果</label></div>
+                <div class="xl-prop-item-r">
+                    <el-select v-model="amivalue" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </div>
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">文本</p> 
-                    <span class="toolbar-size-inp"><em>color</em><input v-model="prop_color"></span> 
-                    <span class="toolbar-size-inp"><em>text</em><input v-model="prop_text"></span>
-                </div>
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">背景</p> 
-                    <span class="toolbar-size-inp"><em>bgcolor</em><input v-model="prop_bgcolor"></span> 
-                    <span class="toolbar-size-inp"><em></em><el-checkbox v-model="prop_isopacity">opacity</el-checkbox></span>
-                </div> 
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title"><el-checkbox v-model="prop_isvid">视频链接</el-checkbox></p>
-                    <span class="toolbar-size-inp"><em>vid</em><input :disabled="!checked" v-model="prop_vid"></span> 
-                </div> 
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">外跳链接</p> 
-                    <span class="toolbar-size-inpt"><em>link</em><input v-model="prop_link"></span> 
-                </div> 
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">动效</p> 
-                    <span class="toolbar-size-inpt"><em>animate</em><select v-model="prop_animate"><option>default</option><option>pulse</option></select></span> 
-                </div>  
-                <div class="toolbar-wh-row">
-                    <p class="toolbar-row-title">上传图片</p> 
-                    <CompUploadImage :custom="'uploadBtnPic'" :inx="1"></CompUploadImage>
-                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过2M</div>
-                </div>  
+            </div>
+            <div class="xl-prop-item">
+                <div><span>视频链接</span><el-switch
+                v-model="value"
+                active-color="#ff4949"
+                inactive-color="#333333">
+                </el-switch></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>视频vid</label></div>
+                <div class="xl-prop-item-r"><input type="text"></div>
+            </div>
+            <div class="xl-prop-item">
+               <div><span>外跳链接</span><el-switch
+                v-model="value"
+                active-color="#ff4949"
+                inactive-color="#333333">
+                </el-switch></div>
+            </div>
+            <div class="xl-prop-item">
+                <div class="xl-prop-item-l"><label>跳转地址</label></div>
+                <div class="xl-prop-item-r"><input type="text"></div>
             </div>
         </div>
+    </div>
 </template>
 <script>
 export default {
@@ -48,13 +78,32 @@ export default {
         
     },
     data() {
-        return {
-            colors: '#194d33',
-            checked: false
+      return {
+        colors: '#194d33',
+        checked: false,
+        options: [{
+            value: '选项1',
+            label: '黄金糕'
+        }, 
+        {
+            value: '选项2',
+            label: '双皮奶'
+        }, 
+        {
+            value: '选项3',
+            label: '蚵仔煎'
+        }],
+        amivalue: '',
+        value:false
         }
     },
     methods: {
-
+        focus(ev){
+            $(ev.target).parent().removeClass('input-number-input-temp');
+        },
+        blur(ev){
+            $(ev.target).parent().addClass('input-number-input-temp');
+        },
     },
     computed: {
         pro() {

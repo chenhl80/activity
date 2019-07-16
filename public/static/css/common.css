@@ -1,0 +1,388 @@
+.pos-abs {
+    position: absolute;
+}
+
+.pos-abs-tl {
+    top: 0;
+    left: 0;
+}
+
+.pos-abs-tr {
+    top: 0;
+    right: 0;
+}
+
+.pp-left,
+.pp-right {
+    width: 260px;
+    height: 100%;
+    z-index: 100;
+    background: #353535;
+}
+
+.pp-right {
+    background: #232323;
+}
+
+.xl-tabs {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.xl-tabs .tab-title {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #000000;
+}
+
+.xl-tabs .tab-title .xl-title-a {
+    display: inline-block;
+    padding: 0px 12px;
+    color: #b5b5b5;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.xl-tabs .tab-content {
+    position: relative;
+    height: calc(100% - 45px);
+    width: 100%;
+    overflow: hidden;
+}
+
+.xl-tabs .tab-content .tab-content-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.xl-tabs .tab-content h3 {
+    height: 34px;
+    line-height: 44px;
+    border-bottom: 1px solid #ffffff;
+    text-indent: 10px;
+}
+
+.xl-module {
+    position: relative;
+}
+
+.xl-module ul {
+    list-style: none;
+    padding: 10px 0px;
+    border-bottom: 1px solid #000000;
+}
+
+.xl-module ul:after {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+    visibility: hidden;
+}
+
+.xl-module ul li {
+    padding: 0;
+    width: 86px;
+    float: left;
+    margin: 10px 0px;
+    box-sizing: border-box;
+}
+
+.xl-module ul li .abtn-box {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.xl-module ul li .abtn-box .ico-box {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+}
+
+.xl-module ul li .abtn-box .ico-name {
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+.xl-module ul li:hover .ico-name {
+    /* color: #d81e06; */
+    color: #ffffff;
+}
+
+.ico-tupian {
+    background: url(../images/icon/tupian.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-tupian {
+    background: url(../images/icon/tupian_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-banner {
+    background: url(../images/icon/banner.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-banner {
+    background: url(../images/icon/banner_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-jiugongge {
+    background: url(../images/icon/jiugongge.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-jiugongge {
+    background: url(../images/icon/jiugongge_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-anniu {
+    background: url(../images/icon/anniu.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-anniu {
+    background: url(../images/icon/anniu_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-jiage {
+    background: url(../images/icon/jiage1.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-jiage {
+    background: url(../images/icon/jiage1_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-zhuanpan {
+    background: url(../images/icon/zhuanpan.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-zhuanpan {
+    background: url(../images/icon/zhuanpan_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-listaward {
+    background: url(../images/icon/listaward.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-listaward {
+    background: url(../images/icon/listaward_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-myaward {
+    background: url(../images/icon/myaward.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-myaward {
+    background: url(../images/icon/myaward_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-chance {
+    background: url(../images/icon/chance.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-chance {
+    background: url(../images/icon/chance_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-film {
+    background: url(../images/icon/film.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-film {
+    background: url(../images/icon/film_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-movie {
+    background: url(../images/icon/movie.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-movie {
+    background: url(../images/icon/movie_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-music {
+    background: url(../images/icon/music.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-music {
+    background: url(../images/icon/music_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-login {
+    background: url(../images/icon/login.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-login {
+    background: url(../images/icon/login_act.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-prop-item {
+    height: 22px;
+    line-height: 22px;
+    padding: 12px 0;
+    overflow: hidden;
+}
+
+.xl-prop-item::after {
+    clear: both;
+    display: block;
+    height: 0;
+    content: '';
+    overflow: hidden;
+}
+
+.xl-prop-item-line {
+    border-bottom: 1px solid #000000;
+}
+
+.xl-prop-item-l {
+    float: left;
+    width: 65px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.xl-prop-item-l label {
+    color: #a0a0a0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.xl-prop-item-l label:after {
+    margin: 0 5px 0 2px;
+    content: ":";
+    position: relative;
+    top: -.5px;
+}
+
+.xl-prop-item-c {
+    float: left;
+    width: 58px;
+    position: relative;
+}
+
+.xl-prop-item-r {
+    float: left;
+    width: 180px;
+    position: relative;
+}
+
+.input-number-input-temp::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon/icon.svg) no-repeat 0 0;
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    z-index: 100;
+    margin-top: 1px;
+    z-index: 1;
+}
+
+.input-number-input-temp:hover::after {
+    background: none;
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+
+/* input:focus {
+    z-index: 1000;
+    display: none;
+} */
+
+input,
+textarea,
+select,
+button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+
+input {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #444;
+    border-radius: 2px;
+    color: #a0a0a0;
+    background-color: #353535;
+}
+
+input[type=number]::-webkit-textfield-decoration-container {
+    /* 背景颜色 */
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    /* -webkit-appearance: none; */
+    /* 去掉上下箭头 */
+    background: red
+}
+
+input[type=number]::-webkit-outer-spin-button {
+    /* -webkit-appearance: none; */
+    /* 有无看不出差别 */
+}
+
+input.el-input__inner {
+    height: 22px;
+    line-height: 22px;
+    border-radius: 2px;
+    border: 1px solid #444;
+    color: #a0a0a0;
+    background-color: #353535;
+}
+
+.xl-prop-item .el-input__icon {
+    line-height: 22px;
+}

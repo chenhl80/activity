@@ -77,8 +77,8 @@ export default {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: #1f262d;
-    margin-bottom: 10px;
+    background: #353535;
+    border-bottom: 1px solid #151515;
 }
 
 .global-top h3 {

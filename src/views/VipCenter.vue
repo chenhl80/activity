@@ -26,10 +26,11 @@ export default {
 <style scoped>
 .global-content {
     width: 100%;
-    height: calc(100% - 118px);
+    height: calc(100% - 75px);
     margin-bottom: 2px;
     overflow: hidden;
     position: relative;
+    background: #101010
 }
 </style>
 
