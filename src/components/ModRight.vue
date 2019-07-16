@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-//import ModCenter from "@/components/ModCenter";
+import '@/components/props/_props'
 export default {
     name:"ModRight",
     components:{
@@ -25,7 +25,7 @@ export default {
     },
     data(){
         return {
-            curview: 'CompBtnsProp',
+            curview: 'ModBodyProp',
             curindex: 0
         }
     }
