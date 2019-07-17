@@ -1,7 +1,7 @@
 <template>
     <div class="global-content">
         <mod-left></mod-left>
-        <!-- <mod-center></mod-center> -->
+        <mod-center></mod-center>
         <mod-right></mod-right>
     </div>  
 </template>

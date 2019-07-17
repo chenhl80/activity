@@ -13,33 +13,22 @@ export default new Vuex.Store({
             "bgcolor": "#f1f1f1"
         },
         "actdata": [{
-                "tempname": "ModPicComTemp",
-                "tempprop": "ModPicComProp",
-                "tempcont": {
-                    "width": 374,
-                    "height": 653,
-                    "maximg": "http://sr4.pplive.cn/cms/54/20/10ee5812efcc176a075b5129a18e500e.png"
-                }
-            },
-            {
-                "tempname": "ModPicComTemp",
-                "tempprop": "ModPicComProp",
-                "tempcont": {
-                    "width": 374,
-                    "height": 473,
-                    "maximg": "http://sr2.pplive.cn/cms/41/62/e481d44b9fd1caaab3b652c092ae1ff2.png"
-                }
-            },
-            {
-                "tempname": "ModPicComTemp",
-                "tempprop": "ModPicComProp",
-                "tempcont": {
-                    "width": 373,
-                    "height": 666,
-                    "maximg": "http://sr2.pplive.cn/cms/28/16/a4264c8df5ce2433c2918f7cf3cb48ab.png"
-                }
+            "tempname": "ModPicComTemp",
+            "tempprop": "ModPicComProp",
+            "tempcont": {
+                'width': 750,
+                'height': 931,
+                'maximg': "//static9.pplive.cn/vip/activity/2019/h5/zhizhuxia/v_20190327113054/images/layout1.jpg",
+                'bgcolor': '',
+                'radius': 0,
+                'statistics': 'beijing_' + String(Math.random()).substring(3, 9),
+                'tj_id': '',
+                'tjname': '图片',
+                'ext_info': "",
+                'description': '用于上传活动页的背景图',
+                'count': 0
             }
-        ],
+        }],
         "fixeddata": [{
                 "tempname": "ModBtnComTemp",
                 "tempprop": "ModBtnComProp",
@@ -147,9 +136,7 @@ export default new Vuex.Store({
         addSnData: (state, payload) => {
             let data = Object.assign({}, JSON.parse(JSON.stringify(payload)));
             let len = state[data.element.stored].length;
-            console.log(len);
             state[data.element.stored].splice(len, 0, data.element.items);
-            console.log('addSnData', payload);
         },
         unDateSnData: (state, payload) => {
             let data = Object.assign({}, JSON.parse(JSON.stringify(payload)));
@@ -182,8 +169,7 @@ export default new Vuex.Store({
             state["bodydata"][data.nature] = data.value;
         },
         localdatastorage(state, payload) {
-            let data = Object.assign({}, JSON.parse(JSON.stringify(payload)));
-            state = data;
+            state = Object.assign({}, JSON.parse(JSON.stringify(payload)));
         }
     },
     actions: {

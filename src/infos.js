@@ -1,15 +1,25 @@
-var pagetype = 1;
 export default {
     comlist: [{
             stored: "actdata", //存到store仓库的节点名
             class: 'tupian',
             icon: '/static/images/icon/tupian.png',
             name: '图片',
+            pagetype: [1, 2, 3, 4],
             items: {
                 tempname: 'ModPicComTemp',
                 tempprop: "ModPicComProp",
                 tempcont: {
-
+                    width: 750,
+                    height: 150,
+                    maximg: "/static/images/h5logo.png",
+                    bgcolor: '',
+                    radius: 0,
+                    statistics: 'beijing_' + String(Math.random()).substring(3, 9),
+                    tj_id: '',
+                    tjname: '图片',
+                    ext_info: "",
+                    description: '用于上传活动页的背景图',
+                    count: 0
                 }
             }
         },
@@ -48,6 +58,19 @@ export default {
             items: {
                 tempname: 'ModRouleComTemp',
                 tempprop: "ModRouleComProp",
+                tempcont: {
+
+                }
+            }
+        },
+        {
+            stored: "fixeddata", //存到store仓库的节点名
+            class: 'cards',
+            icon: '/static/images/icon/cards.png',
+            name: '卡牌',
+            items: {
+                tempname: 'ModCardsTemp',
+                tempprop: "ModCardsProp",
                 tempcont: {
 
                 }
@@ -163,13 +186,56 @@ export default {
         }
     ],
     elslist: [{
+            stored: "fixeddata", //存到store仓库的节点名
+            class: 'login',
+            icon: '/static/images/icon/login.png',
+            name: '登录',
+            items: {
+                tempname: 'ModLoginTemp',
+                tempprop: "ModLoginProp",
+                tempcont: {
+
+                }
+
+            }
+        },
+        {
+            stored: "fixeddata", //存到store仓库的节点名
+            class: 'share',
+            icon: '/static/images/icon/share.png',
+            name: '分享',
+            items: {
+                tempname: 'ModShareTemp',
+                tempprop: "ModShareProp",
+                tempcont: {
+
+                }
+
+            }
+        },
+        {
+            stored: "fixeddata", //存到store仓库的节点名
+            class: 'countdown',
+            icon: '/static/images/icon/countdown.png',
+            name: '倒计时',
+            items: {
+                tempname: 'ModCountDownTemp',
+                tempprop: "ModCountDownProp",
+                tempcont: {
+
+                }
+
+            }
+        }
+    ],
+    tablist: [{
         stored: "fixeddata", //存到store仓库的节点名
-        class: 'login',
-        icon: '/static/images/icon/login.png',
-        name: '登录',
+        class: 'tab',
+        icon: '/static/images/icon/tab.png',
+        name: '选项卡',
         items: {
-            tempname: 'ModLoginTemp',
-            tempprop: "ModLoginProp",
+            tempname: 'ModTabComTemp',
+            tempprop: "ModTabComProp",
             tempcont: {
 
             }

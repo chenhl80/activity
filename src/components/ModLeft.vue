@@ -11,10 +11,11 @@
                         <!-- <h3>通用全局组件</h3> -->
                         <draggable tag="ul" class="comp-global-comm" 
                         :list="comlist"
-                        group="{name:'ppvip', pull: 'clone',put:false}"
+                        
+                        :options="{group:{name:'ppvip', pull: 'clone',put:false},sort: false}">
+                        <!-- group="{name:'ppvip', pull: 'clone',put:false}"
                         sort=false
-                        >
-                        <!-- :options="{group:{name:'ppvip', pull: 'clone',put:false},sort: false}" -->
+                        > -->
                             <li v-for="element in comlist" :key="element.name">
                                 <a href="javascript:;" class="abtn-box">
                                     <i class="ico-box" :class="'ico-'+element.class"></i>
@@ -75,7 +76,19 @@
                             </li>
                         </draggable>
                     </div>
-                    
+                    <div class="xl-module">
+                        <!-- <h3>通用全局组件</h3> -->
+                        <draggable tag="ul" class="comp-global-comm" 
+                        :list="tablist"
+                        :options="{group:{name:'ppvip', pull: 'clone',put:false},sort: false}">
+                            <li v-for="element in tablist" :key="element.name">
+                                <a href="javascript:;" class="abtn-box">
+                                    <i class="ico-box" :class="'ico-'+element.class"></i>
+                                    <span class="ico-name">{{element.name}}</span>
+                                </a>
+                            </li>
+                        </draggable>
+                    </div>
                 </div>
                 </vuescroll>
             </div>
@@ -101,6 +114,7 @@ export default {
             lotlist:info.lotlist,
             movlist:info.movlist,
             elslist:info.elslist,
+            tablist:info.tablist,
             ops: {
                 vuescroll: {
                     mode: 'native',

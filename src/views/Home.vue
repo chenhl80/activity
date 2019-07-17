@@ -7,7 +7,7 @@
         </a>
         <div class="figure_detail">
           <p>法医秦明之幸存者</p>
-          <router-link to="/edit?id=1212&red=sds" class="btn-edit">编辑</router-link>
+          <router-link to="/edit?id=1212&actid=happy_act" class="btn-edit">编辑</router-link>
           <button>删除</button>
         </div>
       </div>

@@ -248,6 +248,46 @@
     background-position: center top;
 }
 
+.ico-cards {
+    background: url(../images/icon/cards.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-cards {
+    background: url(../images/icon/cards_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-share {
+    background: url(../images/icon/share.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-share {
+    background: url(../images/icon/share_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-countdown {
+    background: url(../images/icon/countdown.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-countdown {
+    background: url(../images/icon/countdown_act.png) no-repeat;
+    background-position: center top;
+}
+
+.ico-tab {
+    background: url(../images/icon/tab.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-tab {
+    background: url(../images/icon/tab_act.png) no-repeat;
+    background-position: center top;
+}
+
 .xl-prop-item {
     height: 22px;
     line-height: 22px;

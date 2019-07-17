@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-
+import axios from 'axios'
 export default {
     name: 'VipHead',
     components: {
@@ -23,38 +23,22 @@ export default {
         }
     },
     methods: {
-        //addModelData(flag, fn) {
-        /*
-            let that = this;
-            that.fullscreenLoading = true;
-            localStorage.setItem(actpage, JSON.stringify(store.state));
-            let modvalue = localStorage.getItem(actpage);
-            console.log(mod_id);
-            $.ajax({
-                url: "/addModelData",
-                type: "post",
-                dataType: "json",
-                data: {
-                    'actId': actid,
-                    'actModulePageId': pageid,
-                    'moduleValue': modvalue,
-                    "id": mod_id,
-                    "flag": flag
-                },
-                success: function(data) {
-                    console.log(data);
-                    mod_id = data.attr.id;
-                    setTimeout(() => { that.fullscreenLoading = false; }, 500);
-                    if (fn) { fn(); }
-                },
-                error: function(msg) { console.log(msg) }
-            });
-         */   
-        //},
+        
         back() {
             window.history.back(-1);
         },
         save() {
+            console.log(this.$router);
+            console.log(this.$route.query);
+            let query = this.$route.query;
+            localStorage.setItem(query.actid+query.id,JSON.stringify(this.$store.state));
+            
+
+                let id = query.actid+query.id;
+                let state = this.$store.state;
+            axios.post('https://wd1037592217qasiwg.wilddogio.com/posts.json',{id,state}).then((data) =>{
+
+            })
             //this.addModelData('save');
         },
         reset() {
