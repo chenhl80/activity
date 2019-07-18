@@ -41,7 +41,26 @@
                                 </div>
                             </div>
                             <div class="main-layposition">
-                               
+                                <vue-drag-resize v-for="(rect,index) in rects" 
+                                    :key="index"
+                                    :w="Number(rect.tempcont.width)" 
+                                    :h="Number(rect.tempcont.height)" 
+                                    :x="Number(rect.tempcont.left)" 
+                                    :y="Number(rect.tempcont.top)" 
+                                    :minw="10"
+                                    :minh="10"
+                                    :z="1010"
+                                    :parentH="Number(parentH)"
+                                    v-on:resizing="changePosSize($event,index)" 
+                                    v-on:dragging="changePosSize($event,index)" 
+                                    v-on:dragstop="dragstop">
+                                    <keep-alive>
+                                        <component :is="addeditupdel" :vindex="index" :vtempprop="rect.tempprop" :vflag="false"></component>
+                                    </keep-alive>
+                                    <keep-alive>
+                                        <component :is="rect.tempname" :vindex="index"></component>
+                                    </keep-alive>
+                                </vue-drag-resize>
                             </div>
                             <div class="main-show"></div>
                         </draggable>
@@ -56,13 +75,15 @@ import Vue from 'vue'
 import vuescroll from 'vuescroll/dist/vuescroll-native'
 import draggable from 'vuedraggable'
 import AddEditDel from '@/components/AddEditDel'
+import VueDragResize from 'vue-drag-resize'
 Vue.use(vuescroll)
 export default {
     name:"ModCenter",
     components:{
         vuescroll,
         draggable,
-        AddEditDel
+        AddEditDel,
+        VueDragResize
     },
     data(){
         return {
@@ -77,6 +98,16 @@ export default {
             count: 0
         }
     },
+    created(){
+        let cid = this.$route.query.actid+this.$route.query.id;
+        axios.get('/posts/'+cid+'.json').then((data)=>{
+            console.log(data.data);
+            if(data.data != null){
+                this.$store.replaceState(data.data);
+            }
+        });
+        
+    },
     mounted(){
         console.log(this.$store);
     },
@@ -88,10 +119,10 @@ export default {
     },
     methods: {
         changetemps(temp, index) {
-            vue.$emit("clickPropCurFun", { temp: temp, index: index });
+            this.$emit("clickPropCurFun", { temp: temp, index: index });
         },
         aicobody() {
-            vue.$emit("clickPropCurFun", { temp: 'xl-prop-body', index: 0 });
+            this.$emit("clickPropCurFun", { temp: 'xl-prop-body', index: 0 });
         },
         log: function(evt) {
             console.log('log', evt);
@@ -133,7 +164,6 @@ export default {
         // list() {
         //     return [];
         // },
-
         terms() {
            
         },
@@ -176,6 +206,7 @@ export default {
             //console.log('list', this.list);
             console.log('actdata:', this.$store.getters.actdata);
             let actdata = this.$store.getters.actdata;
+            console.log('getters-actdata',actdata);
             let filactdata = actdata.filter(item => { if (item) { return true; } });
             return filactdata;
         },
@@ -262,6 +293,21 @@ export default {
 }
 .boxes {
     position: relative;
+}
+.main-layout-relv{
+    position: relative;
+    height: 100%;
+}
+.main-dragrs{
+    min-height: 500px;
+}
+.main-layposition{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 </style>
 

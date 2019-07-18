@@ -6,117 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         "bodydata": {
-            "width": "",
-            "height": "",
-            "isuploadimg": false,
-            "bodyimg": "",
-            "bgcolor": "#f1f1f1"
+            width: '',
+            height: '',
+            isuploadimg: false,
+            bodyimg: '',
+            bgcolor: "#f1f1f1"
         },
-        "actdata": [{
-            "tempname": "ModPicComTemp",
-            "tempprop": "ModPicComProp",
-            "tempcont": {
-                'width': 750,
-                'height': 931,
-                'maximg': "//static9.pplive.cn/vip/activity/2019/h5/zhizhuxia/v_20190327113054/images/layout1.jpg",
-                'bgcolor': '',
-                'radius': 0,
-                'statistics': 'beijing_' + String(Math.random()).substring(3, 9),
-                'tj_id': '',
-                'tjname': '图片',
-                'ext_info': "",
-                'description': '用于上传活动页的背景图',
-                'count': 0
-            }
-        }],
-        "fixeddata": [{
-                "tempname": "ModBtnComTemp",
-                "tempprop": "ModBtnComProp",
-                "tempcont": {
-                    "width": 137,
-                    "height": 141,
-                    "top": 309,
-                    "left": 77,
-                    "maximg": "",
-                    "bgcolor": "#344361",
-                    "color": "#fff",
-                    "link": "",
-                    "text": "sss",
-                    "isvid": false,
-                    "vid": "",
-                    "opacity": false,
-                    "animate": "pulse"
-                }
-            },
-            {
-                "tempname": "ModBtnPayTemp",
-                "tempprop": "ModBtnPayProp",
-                "tempcont": {
-                    "width": 117,
-                    "height": 144,
-                    "top": 670,
-                    "left": 227,
-                    "img": "",
-                    "bgcolor": "#451025",
-                    "fontsize": 12,
-                    "color": "",
-                    "opacity": false,
-                    "price": "yinfawuzhe_pc",
-                    "detail": "one_year",
-                    "text": null,
-                    "animate": "default"
-                }
-            },
-            {
-                "tempname": "ModBtnPayTemp",
-                "tempprop": "ModBtnPayProp",
-                "tempcont": {
-                    "width": 150,
-                    "height": 49,
-                    "top": 968,
-                    "left": 196,
-                    "img": "",
-                    "bgcolor": "#451025",
-                    "fontsize": 12,
-                    "color": "",
-                    "opacity": false,
-                    "price": "yinfawuzhe_pc",
-                    "detail": "one_year",
-                    "text": null,
-                    "animate": "default"
-                }
-            },
-            {
-                "tempname": "ModBtnPayTemp",
-                "tempprop": "ModBtnPayProp",
-                "tempcont": {
-                    "width": 151,
-                    "height": 45,
-                    "top": 973,
-                    "left": 31,
-                    "img": "",
-                    "bgcolor": "#451025",
-                    "fontsize": 12,
-                    "color": "",
-                    "opacity": false,
-                    "price": "yinfawuzhe_pc",
-                    "detail": "one_year",
-                    "text": null,
-                    "animate": "default"
-                }
-            },
-            {
-                "tempname": "ModMovComTemp",
-                "tempprop": "ModMovComProp",
-                "tempcont": {
-                    "width": 136,
-                    "height": 196,
-                    "top": 1134,
-                    "left": 208,
-                    "vid": 9046672
-                }
-            }
-        ]
+        "actdata": [],
+        "fixeddata": []
     },
     getters: {
         bodydata: state => {

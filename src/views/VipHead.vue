@@ -10,7 +10,6 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
 export default {
     name: 'VipHead',
     components: {
@@ -22,6 +21,11 @@ export default {
             fullscreenLoading: false
         }
     },
+    created(){
+        // axios.get('/posts.json').then((data) =>{
+        //     console.log(data.data);
+        // })
+    },
     methods: {
         
         back() {
@@ -31,13 +35,11 @@ export default {
             console.log(this.$router);
             console.log(this.$route.query);
             let query = this.$route.query;
-            localStorage.setItem(query.actid+query.id,JSON.stringify(this.$store.state));
+            let cid = query.actid+query.id;
+            //localStorage.setItem(cid,JSON.stringify(this.$store.state));
             
-
-                let id = query.actid+query.id;
-                let state = this.$store.state;
-            axios.post('https://wd1037592217qasiwg.wilddogio.com/posts.json',{id,state}).then((data) =>{
-
+            axios.put('/posts/'+cid+'.json',this.$store.state).then((data) =>{
+                console.log(data);
             })
             //this.addModelData('save');
         },

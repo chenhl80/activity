@@ -23,6 +23,9 @@ export default {
             return this.$store.state.actdata.length;
         }
     },
+    mounted(){
+        console.log(this.$root);
+    },
     methods: {
         enter(num) {
             this.remasks = num;
@@ -36,7 +39,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                vue.$emit("clickPropCurFun", { temp: "xl-prop-body", index: 0 });
+                this.$root.$emit("clickPropCurFun", { temp: "xl-prop-body", index: 0 });
                 let nature = "";
                 if (this.vflag) {
                     nature = "actdata";
@@ -56,7 +59,8 @@ export default {
             });
         },
         setup(temp, index) {
-            vue.$emit("clickPropCurFun", { temp: temp, index: index });
+            console.log(temp, index);
+            this.$root.$emit("clickPropCurFun", { temp: temp, index: index });
         },
         prev(index) {
             if (index == 0) {

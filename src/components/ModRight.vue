@@ -8,7 +8,7 @@
                 <div class="tab-content-scroll">
                     <transition>
                         <keep-alive>
-                            <component :is="curview"></component>
+                            <component :is="curview" :vindex="curindex"></component>
                         </keep-alive>
                     </transition>
                 </div>
@@ -20,6 +20,7 @@
 import '@/components/props/_props'
 export default {
     name:"ModRight",
+    props: ["vindex", "vnature"],
     components:{
         //ModCenter
     },
@@ -28,6 +29,13 @@ export default {
             curview: 'ModBodyProp',
             curindex: 0
         }
+    },
+    mounted() {
+        this.$root.$on("clickPropCurFun", (result) => {
+            console.log('clickPropCurFun',result);
+            this.curindex = result.index;
+            this.curview = result.temp;
+        });
     }
 }
 </script>
