@@ -288,6 +288,16 @@
     background-position: center top;
 }
 
+.ico-guaguale {
+    background: url(../images/icon/guaguale.png) no-repeat;
+    background-position: center top;
+}
+
+.xl-module ul li:hover .ico-guaguale {
+    background: url(../images/icon/guaguale_act.png) no-repeat;
+    background-position: center top;
+}
+
 .xl-prop-item {
     height: 22px;
     line-height: 22px;
@@ -425,4 +435,8 @@ input.el-input__inner {
 
 .xl-prop-item .el-input__icon {
     line-height: 22px;
+}
+
+.fixed_module {
+    display: block;
 }

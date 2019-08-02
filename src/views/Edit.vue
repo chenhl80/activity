@@ -13,7 +13,7 @@ import VipCenter from '@/views/VipCenter.vue'
 // import VipFoot from '@/views/VipFoot.vue'
 
 export default {
-  name: 'home',
+  name: 'Edit',
   components: {
     VipHead,
     VipCenter

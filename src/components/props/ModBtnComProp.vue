@@ -72,6 +72,7 @@
     </div>
 </template>
 <script>
+
 export default {
     name:"ModBtnComProp",
     mounted() {

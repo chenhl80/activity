@@ -27,7 +27,6 @@ export default {
         // })
     },
     methods: {
-        
         back() {
             window.history.back(-1);
         },
@@ -37,22 +36,23 @@ export default {
             let query = this.$route.query;
             let cid = query.actid+query.id;
             //localStorage.setItem(cid,JSON.stringify(this.$store.state));
-            
+            this.fullscreenLoading = true;
             axios.put('/posts/'+cid+'.json',this.$store.state).then((data) =>{
                 console.log(data);
+                setTimeout(() => {this.fullscreenLoading = false;}, 500);
             })
-            //this.addModelData('save');
         },
         reset() {
+            //重置
             //localStorage.removeItem(actpage);
             //location.reload();
             //localStorage.clear();
         },
         preview() {
-            
+            //预览
         },
         issue() {
-            
+            //发布
         }
     }
 }

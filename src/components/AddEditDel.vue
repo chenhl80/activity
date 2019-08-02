@@ -15,7 +15,7 @@ export default {
     name:"AddEditDel",
     data() {
         return {
-            remasks: -1,
+            remasks: -1,//鼠标移入移出组件时遮罩显示判断 -1不显示 
         }
     },
     computed: {
@@ -24,7 +24,7 @@ export default {
         }
     },
     mounted(){
-        console.log(this.$root);
+        //console.log(this.$root);//根组件
     },
     methods: {
         enter(num) {
@@ -39,7 +39,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$root.$emit("clickPropCurFun", { temp: "xl-prop-body", index: 0 });
+                this.$root.$emit("clickPropCurFun", { temp: "ModBodyProp", index: 0 });
                 let nature = "";
                 if (this.vflag) {
                     nature = "actdata";
@@ -82,9 +82,6 @@ export default {
                     newinx: index + 1
                 });
             }
-        },
-        removmask() {
-
         }
     }
 }
@@ -116,6 +113,7 @@ export default {
     margin: 0;
     font-size: 0px;
     float: left;
+    cursor: pointer;
 }
 
 .propgear .ico-remove {
@@ -145,5 +143,6 @@ export default {
     height: 100%;
     z-index: 1001;
     background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 </style>

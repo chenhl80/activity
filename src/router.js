@@ -19,6 +19,12 @@ export default new Router({
             component: EditPage
         },
         {
+            path: '/activity',
+            //component: resolve => require(['@/view/Activity'], resolve)
+            component: () =>
+                import ( /* webpackChunkName: "about" */ './views/Activity.vue')
+        },
+        {
             path: '/about',
             name: 'about',
             // route level code-splitting

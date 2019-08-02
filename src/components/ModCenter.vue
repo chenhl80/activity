@@ -27,8 +27,7 @@
                 <vuescroll>
                     <div id="main-layout" class="main-layout-relv">
                         <draggable :list="list"
-                        :options="{group:{name:'ppvip'},animation: 150}" 
-                        @end="end" @change="log" 
+                        :options="{group:{name:'ppvip'},animation: 150}" @end="end" @change="log" 
                         class="main-dragg main-dragrs">
                             <div class="main-laycontent">   
                                 <div v-for="(item,index) in actdata" class="boxes" :index="index" :key="item.tempname+index">
@@ -50,10 +49,12 @@
                                     :minw="10"
                                     :minh="10"
                                     :z="1010"
-                                    :parentH="Number(parentH)"
+                                    :parentW="750"
+                                    :parentLimitation="true"
                                     v-on:resizing="changePosSize($event,index)" 
                                     v-on:dragging="changePosSize($event,index)" 
                                     v-on:dragstop="dragstop">
+                                    <!-- :parentH="Number(parentH)" -->
                                     <keep-alive>
                                         <component :is="addeditupdel" :vindex="index" :vtempprop="rect.tempprop" :vflag="false"></component>
                                     </keep-alive>
@@ -72,10 +73,12 @@
 </template>
 <script>
 import Vue from 'vue'
+import '@/components/_globals'
 import vuescroll from 'vuescroll/dist/vuescroll-native'
 import draggable from 'vuedraggable'
 import AddEditDel from '@/components/AddEditDel'
 import VueDragResize from 'vue-drag-resize'
+
 Vue.use(vuescroll)
 export default {
     name:"ModCenter",
@@ -206,7 +209,6 @@ export default {
             //console.log('list', this.list);
             console.log('actdata:', this.$store.getters.actdata);
             let actdata = this.$store.getters.actdata;
-            console.log('getters-actdata',actdata);
             let filactdata = actdata.filter(item => { if (item) { return true; } });
             return filactdata;
         },

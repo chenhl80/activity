@@ -54,7 +54,23 @@ export default new Vuex.Store({
             state["fixeddata"][data.index]["tempcont"][data.nature] = data.value;
         },
         editBtnsParamsSnData(state, payload) {
-            state["fixeddata"][payload.index]["params"][payload.nature] = payload.value;
+            let data = Object.assign({}, JSON.parse(JSON.stringify(payload)));
+            let datatype = data.datatype;
+            let index = data.index;
+            let nature = data.nature;
+            let subnode = data.subnode;
+            let subinx = data.subinx;
+            let imgw = data.imgw;
+            let imgh = data.imgh;
+            if (subnode) {
+                state[datatype][index]["tempcont"][nature][subinx][subnode] = data.value;
+                state[datatype][index]["tempcont"][nature][subinx]['imgw'] = imgw;
+                state[datatype][index]["tempcont"][nature][subinx]['imgh'] = imgh;
+            } else {
+                state[datatype][index]["tempcont"][nature] = data.value;
+                state[datatype][index]["tempcont"]['imgw'] = imgw;
+                state[datatype][index]["tempcont"]['imgh'] = imgh;
+            }
         },
         getSnData(state, payload) {
             let arrdata = state.sndata.ppdata.slice(0, payload + 1);
